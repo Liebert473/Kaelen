@@ -37,8 +37,6 @@ const SignupPage: React.FC = () => {
       if (error) {
         setError(error.message);
         console.log(error.message);
-      } else {
-        navigate("/dashboard");
       }
     } catch (err) {
       console.log(err);
