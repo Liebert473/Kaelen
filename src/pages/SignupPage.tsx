@@ -29,9 +29,6 @@ const SignupPage: React.FC = () => {
     try {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: provider,
-        options: {
-          redirectTo: "http://localhost:5173/dashboard",
-        },
       });
 
       if (error) {

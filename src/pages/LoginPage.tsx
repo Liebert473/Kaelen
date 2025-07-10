@@ -30,10 +30,7 @@ const LoginPage: React.FC = () => {
     setLoading(true);
     try {
       const { error } = await supabase.auth.signInWithOAuth({
-        provider: provider,
-        options: {
-          redirectTo: "http://localhost:5173/dashboard",
-        },
+        provider: provider
       });
 
       if (error) {
