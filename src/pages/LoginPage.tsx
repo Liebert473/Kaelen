@@ -30,7 +30,10 @@ const LoginPage: React.FC = () => {
     setLoading(true);
     try {
       const { error } = await supabase.auth.signInWithOAuth({
-        provider: provider
+        provider: provider,
+        options: {
+          redirectTo: "https://kaelen.netlify.app",
+        },
       });
 
       if (error) {
