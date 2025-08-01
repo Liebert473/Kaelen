@@ -11,7 +11,7 @@ const SignupPage: React.FC = () => {
   const handleSignup = async (email: string, password: string) => {
     setError(null);
     setLoading(true);
-    const { error } = await supabase.auth.signInWithPassword({
+    const { error } = await supabase.auth.signUp({
       email,
       password,
     });
@@ -29,9 +29,6 @@ const SignupPage: React.FC = () => {
     try {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: provider,
-        options: {
-          redirectTo: "https://kaelen.netlify.app",
-        },
       });
 
       if (error) {
